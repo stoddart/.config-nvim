@@ -11,7 +11,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- Line wrapping
-opt.wrap = false 
+opt.wrap = false
 
 -- Search settings
 opt.ignorecase = true
