@@ -1,3 +1,6 @@
+-- options.lua
+-- Author: Daniel Norman Stoddart <stoddart@gmail.com>
+
 local opt = vim.opt -- For conciseness
 
 -- Line numbers

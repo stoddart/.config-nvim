@@ -1,3 +1,6 @@
+-- keymaps.lua
+-- Author: Daniel Norman Stoddart <stoddart@gmail.com>
+
 -- Set leader key to space
 vim.g.mapleader = " "
 
