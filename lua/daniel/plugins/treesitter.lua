@@ -6,6 +6,8 @@ end
 
 -- Configure treesitter
 treesitter.setup({
+	ignore_install = { "c", "help", "lua", "vim" },
+
 	-- Enable syntax highlighting
 	highlight = {
 		enable = true,
