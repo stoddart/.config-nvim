@@ -5,6 +5,9 @@ if not status then
 end
 
 -- Configure treesitter
+
+require("nvim-treesitter.install").compilers = { "clang" }
+
 treesitter.setup({
 	ignore_install = { "c", "help", "lua", "vim" },
 
