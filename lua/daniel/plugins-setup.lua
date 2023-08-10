@@ -76,7 +76,7 @@ return packer.startup(function(use)
 	-- Configuring LSP servers
 	use("neovim/nvim-lspconfig") -- Easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- For autocompletion
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- Enhanced LSP uis
+	use("glepnir/lspsaga.nvim") -- Enhanced LSP UIs
 	use("jose-elias-alvarez/typescript.nvim") -- Additional functionality for Typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- VSCode-like icons for autocompletion
 
