@@ -1,18 +1,18 @@
--- Import lspsaga safely
-local saga_status, saga = pcall(require, "lspsaga")
-if not saga_status then
+if vim.g.lspsaga_version then
 	return
 end
 
-saga.setup({
-	-- Keybinds for navigation in lspsaga window
-	move_in_saga = { prev = "<C-k>", next = "<C-j>" },
-	-- Use enter to open file with finder
-	finder_action_keys = {
-		open = "<CR>",
-	},
-	-- Use enter to open file with definition preview
-	definition_action_keys = {
-		edit = "<CR>",
-	},
+vim.g.lspsaga_version = "0.3.1"
+
+vim.api.nvim_create_user_command("Lspsaga", function(args)
+	require("lspsaga.command").load_command(args.fargs[1], vim.list_slice(args.fargs, 2))
+end, {
+	range = true,
+	nargs = "+",
+	complete = function(arg)
+		local list = require("lspsaga.command").command_list()
+		return vim.tbl_filter(function(s)
+			return string.match(s, "^" .. arg)
+		end, list)
+	end,
 })
