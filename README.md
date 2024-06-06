@@ -1,2 +1,2 @@
 # .config-nvim
-This is where I keep my Neovim config.
+A repo for my Neovim config.
