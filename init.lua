@@ -1,8 +1,8 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
--- Initialize plugins (make sure which-key is loaded before using its API)
-require("plugins")
+-- Remove the 'require('plugins')' line since it doesn't exist
+-- Define key mappings, replacing the conflicting ones
 
 -- Example key mappings that might conflict
 -- Use vim.api.nvim_set_keymap to set new key mappings or change conflicting ones
