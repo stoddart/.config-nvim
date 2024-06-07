@@ -1,4 +1,4 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+-- Bootstrap lazy.nvim, LazyVim, and plugins
 require("config.lazy")
 
 -- Define a helper function to safely delete key mappings
@@ -9,22 +9,26 @@ local function safe_del_keymap(mode, lhs)
   end
 end
 
+-- Safely unmap the conflicting keybindings
+safe_del_keymap("n", "gc")
+safe_del_keymap("n", "y")
+safe_del_keymap("n", "o")
+
 -- Define key mappings to avoid conflicts
-vim.api.nvim_set_keymap("n", "<new_gc_key>", "<your_command>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<new_y_key>", "<Plug>(YankyYank)", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<new_o_key>", "<your_command>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gcc", "<cmd>Commentary<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "yy", "<Plug>(YankyYank)", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "oo", "o<Esc>", { noremap = true, silent = true })
+
+-- Rebind 'Y' to the YankyYank command (choose a new keybinding for 'y')
+vim.api.nvim_set_keymap("n", "Y", "<Plug>(YankyYank)", { noremap = true, silent = true })
 
 -- Use WhichKey's API to check existing keymaps and handle conflicts
 local wk = require("which-key")
 
 wk.register({
-  -- Here you can list your key mappings or just handle conflicts
-  ["<new_gc_key>"] = "Description for the new gc keybinding",
-  ["<new_y_key>"] = "Description for the new y keybinding",
-  ["<new_o_key>"] = "Description for the new o keybinding",
+  -- Register your new key mappings with descriptions
+  ["gcc"] = "Comment out line",
+  ["yy"] = "Yank line with Yanky",
+  ["oo"] = "Insert new line below",
+  ["Y"] = "Yank line with Yanky (new keybinding)",
 })
-
--- Safely unmap conflicting keybindings
-safe_del_keymap("n", "gc")
-safe_del_keymap("n", "y")
-safe_del_keymap("n", "o")
