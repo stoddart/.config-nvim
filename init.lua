@@ -1,6 +1,9 @@
 -- Bootstrap lazy.nvim, LazyVim, and plugins
 require("config.lazy")
 
+-- Set Python 3 host program for Neovim
+vim.g.python3_host_prog = "/Users/daniel/.pyenv/shims/python3"
+
 -- Define a helper function to safely delete key mappings
 local function safe_del_keymap(mode, lhs)
   local exists = vim.fn.mapcheck(lhs, mode) ~= ""
