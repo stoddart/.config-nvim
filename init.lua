@@ -25,10 +25,20 @@ vim.api.nvim_set_keymap("n", "Y", "<Plug>(YankyYank)", { noremap = true, silent 
 -- Use WhichKey's API to check existing keymaps and handle conflicts
 local wk = require("which-key")
 
-wk.register({
-  -- Register your new key mappings with descriptions
-  ["gcc"] = "Comment out line",
-  ["yy"] = "Yank line with Yanky",
-  ["oo"] = "Insert new line below",
-  ["Y"] = "Yank line with Yanky (new keybinding)",
+-- Add key mappings with descriptions
+wk.add({
+  -- Keep existing commonly used key mappings
+  { "<y>", desc = "Yank (copy)" }, -- Keep 'y' for yank (optional)
+  { "<>", desc = "Indent right" }, -- Keep '>' for indent right
+  { "<<>", desc = "Indent left" }, -- Keep '<' for indent left
+
+  -- Custom mappings with conflict resolution
+  { "gcc", desc = "Comment out line" },
+  { "yy", desc = "Yank line with Yanky" },
+  { "oo", desc = "Insert new line below" },
+  { "Y", desc = "Yank line with Yanky (new keybinding)" },
+
+  -- Choose different keys for custom 'a' and 'i' mappings
+  { "F", desc = "Around word (custom)" }, -- Replace 'i' with 'F' (example)
+  { "w", desc = "Inside word (custom)" }, -- Replace 'a' with 'w' (example)
 })
