@@ -1,6 +1,9 @@
 -- Bootstrap lazy.nvim, LazyVim, and plugins
 require("config.lazy")
 
+-- Set options
+vim.o.startofline = true
+
 -- Set Python 3 host program for Neovim
 vim.g.python3_host_prog = "/Users/daniel/.pyenv/shims/python3"
 
