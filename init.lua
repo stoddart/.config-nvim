@@ -34,9 +34,9 @@ local wk = require("which-key")
 -- Add key mappings with descriptions
 wk.add({
   -- Keep existing commonly used key mappings
-  { "<y>", desc = "Yank (copy)" }, -- Keep 'y' for yank (optional)
-  { "<>", desc = "Indent right" }, -- Keep '>' for indent right
-  { "<<>", desc = "Indent left" }, -- Keep '<' for indent left
+  { "y", desc = "Yank (copy)" }, -- Keep 'y' for yank (optional)
+  { ">", desc = "Indent right" }, -- Keep '>' for indent right
+  { "<", desc = "Indent left" }, -- Keep '<' for indent left
 
   -- Custom mappings with conflict resolution
   { "gcc", desc = "Comment out line" },
