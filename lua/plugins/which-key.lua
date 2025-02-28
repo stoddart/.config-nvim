@@ -1,7 +1,10 @@
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
+  lazy = false, -- Ensures it loads immediately
   config = function()
-    -- You can add your which-key configuration here if needed
+    -- Manually append runtime path
+    vim.opt.rtp:append(vim.fn.stdpath("data") .. "/lazy/which-key.nvim")
+
+    require("which-key").setup({})
   end,
 }
