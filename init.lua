@@ -1,3 +1,14 @@
+-- Ensure Lazy.nvim is only loaded once
+if not pcall(require, "lazy") then
+  return
+end
+
+require("lazy").setup({
+  spec = {
+    { import = "plugins" }, -- Make sure this folder exists
+  },
+})
+
 -- Bootstrap lazy.nvim, LazyVim, and plugins
 require("config.lazy")
 
