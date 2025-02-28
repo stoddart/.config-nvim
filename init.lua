@@ -1,5 +1,11 @@
+-- Ensure Lazy.nvim is loaded only once
+if not pcall(require, "lazy") then
+  return
+end
+
 -- Bootstrap lazy.nvim, LazyVim, and plugins
 require("config.lazy")
+require("lazy").setup("plugins")
 
 -- Set options
 vim.o.startofline = true
