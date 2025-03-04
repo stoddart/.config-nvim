@@ -8,7 +8,7 @@
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "fzf-lua": { "branch": "main", "commit": "480e29c20cb324bb9bf3d6f7d8e5505bcb49d555" },
   "gitsigns.nvim": { "branch": "main", "commit": "4c40357994f386e72be92a46f41fc1664c84c87d" },
-  "grug-far.nvim": { "branch": "main", "commit": "f86a07ee814d9eff3c08a7ce1041e502c32872c5" },
+  "grug-far.nvim": { "branch": "main", "commit": "3d39dc8b31d4ab7aad1b9ffdba136eafc6c7c360" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lazydev.nvim": { "branch": "main", "commit": "2367a6c0a01eb9edb0464731cc0fb61ed9ab9d2c" },
   "lualine.nvim": { "branch": "master", "commit": "f4f791f67e70d378a754d02da068231d2352e5bc" },
