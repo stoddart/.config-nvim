@@ -36,8 +36,8 @@ return {
         direction = "float",
       })
 
-      -- Function to toggle lazygit
-      function _lazygit_toggle()
+      -- Function to toggle lazygit (proper global with uppercase initial)
+      function _G.LazyGitToggle()
         lazygit:toggle()
       end
 
@@ -45,26 +45,26 @@ return {
       vim.api.nvim_set_keymap(
         "n",
         "<leader>tg",
-        "<cmd>lua _lazygit_toggle()<CR>",
+        "<cmd>lua LazyGitToggle()<CR>",
         { noremap = true, silent = true, desc = "Toggle Lazygit" }
       )
       vim.api.nvim_set_keymap(
         "n",
         "<leader>tf",
         "<cmd>ToggleTerm direction=float<cr>",
-        { noremap = true, silent = true }
+        { noremap = true, silent = true, desc = "Float Terminal" }
       )
       vim.api.nvim_set_keymap(
         "n",
         "<leader>th",
         "<cmd>ToggleTerm size=10 direction=horizontal<cr>",
-        { noremap = true, silent = true }
+        { noremap = true, silent = true, desc = "Horizontal Terminal" }
       )
       vim.api.nvim_set_keymap(
         "n",
         "<leader>tv",
         "<cmd>ToggleTerm size=80 direction=vertical<cr>",
-        { noremap = true, silent = true }
+        { noremap = true, silent = true, desc = "Vertical Terminal" }
       )
     end,
   },
