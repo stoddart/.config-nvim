@@ -19,10 +19,7 @@ return {
       formatters_by_ft = {
         python = { "black" }, -- Use black for Python formatting
       },
-      format_on_save = {
-        timeout_ms = 500, -- Timeout for formatting to prevent lag
-        lsp_fallback = true, -- Fallback to LSP if formatter fails
-      },
+      -- Removed format_on_save to avoid conflict with LazyVim's defaults
     },
   },
 }
