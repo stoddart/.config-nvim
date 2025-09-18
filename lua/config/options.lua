@@ -4,6 +4,9 @@
 
 -- Remove or comment out this line to enable formatting
 -- vim.g.lazyvim_format_on_save = false
+--
+-- Make sure Neovim uses Homebrew's tree-sitter
+vim.env.PATH = "/opt/homebrew/bin:" .. vim.env.PATH
 
 -- Optionally, customize formatting settings
 vim.g.lazyvim_format_on_save = {
