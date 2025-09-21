@@ -20,3 +20,4 @@ require("config.lazy")
 
 -- Set options
 vim.o.startofline = true
+vim.g.loaded_perl_provider = 0
