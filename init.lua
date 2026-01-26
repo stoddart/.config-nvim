@@ -16,8 +16,20 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.python3_host_prog = "/Users/daniel/.pyenv/shims/python3"
 
 -- Load LazyVim and plugins
-require("config.lazy")
+require("config.lazy"
 
 -- Set options
 vim.o.startofline = true
 vim.g.loaded_perl_provider = 0
+
+-- Enable Harper
+require('lspconfig').harper_ls.setup {
+  settings = {
+    ["harper-ls"] = {
+      linters = {
+        SentenceCapitalization = false,
+        SpellCheck = false
+      }
+    }
+  }
+}
