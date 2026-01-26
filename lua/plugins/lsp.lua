@@ -10,6 +10,25 @@ return {
             args = { "--line-length=88", "--ignore=E203,W503" }, -- Align with black and pyproject.toml
           },
         },
+        harper_ls = {
+          settings = {
+            ["harper-ls"] = {
+              linters = {
+                SentenceCapitalization = false,
+                SpellCheck = false,
+              },
+            },
+          },
+        },
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim" },
+              },
+            },
+          },
+        },
       },
     },
   },

@@ -21,15 +21,3 @@ require("config.lazy")
 -- Set options
 vim.o.startofline = true
 vim.g.loaded_perl_provider = 0
-
--- Enable Harper
-require('lspconfig').harper_ls.setup {
-  settings = {
-    ["harper-ls"] = {
-      linters = {
-        SentenceCapitalization = false,
-        SpellCheck = false
-      }
-    }
-  }
-}
